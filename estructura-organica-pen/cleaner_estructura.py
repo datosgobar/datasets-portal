@@ -58,5 +58,7 @@ rules = [
 
 
 dc = DataCleaner(input_path)
+# separar mails: 
+dc.df['mail'] = dc.df['mail'].str.lower()
+dc.df['mail'] = dc.df.mail.str.findall('[a-z_0-9\.]+@[a-z_0-9\.]+').str.join(",")
 dc.clean(rules)
-

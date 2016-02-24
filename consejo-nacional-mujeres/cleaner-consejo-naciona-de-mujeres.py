@@ -51,6 +51,6 @@ dc = DataCleaner(input_path)
 dc.df['coordenadas_latitud'] = dc.df.recurso.str.split("\s+", 1, expand=True)[0]
 dc.df['coordenadas_longitud'] = dc.df.recurso.str.split("\s+", 1, expand=True)[1]
 dc.df['mail'] = dc.df['mail'].str.lower()
-dc.df['sitio_web'] = dc.df.mail.str.findall('www[^ \s]+').str.join(",")[654]
-dc.df['mail'] = dc.df.mail.str.findall('[a-z \.]+@[a-z \.]+')[50:].str.join(",")
+dc.df['sitio_web'] = dc.df.mail.str.findall('www[^ \s]+').str.join(",")
+dc.df['mail'] = dc.df.mail.str.findall('[a-z_0-9\.]+@[a-z_0-9\.]+').str.join(",")
 dc.clean_file(rules, output_path)
