@@ -17,12 +17,7 @@ import pandas as pd
 DEFAULT_INPUT_PATH  = "contratos_hasta_2015.csv"
 DEFAULT_OUTPUT_PATH = "clear_contratos_hasta_2015.csv"
 
-df = pd.read_csv(DEFAULT_INPUT_PATH , encoding="utf8")
-
-df
-
-
-rules = [
+RULES = [
     
     {
         "nombre_propio": [
@@ -73,9 +68,6 @@ rules = [
 ]
 
 
-dc = DataCleaner(DEFAULT_INPUT_PATH )
-
-dc.clean_file(rules, DEFAULT_OUTPUT_PATH)
 
 
 def custom_cleaning_before_rules(dc):
@@ -99,7 +91,7 @@ def clean_file(input_path, output_path):
     print("Comenzando limpieza...")
     dc = DataCleaner(input_path)
     custom_cleaning_before_rules(dc)
-    dc.clean(rules)
+    dc.clean(RULES)
     custom_cleaning_after_rules(dc)
     dc.save(output_path)
     print("Limpieza finalizada exitosamente!")
