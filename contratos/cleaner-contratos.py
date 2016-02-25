@@ -1,15 +1,23 @@
 # coding: utf-8
 
+"""
+Script de limpieza para los datos de contratos
+Utiliza el paquete `data-cleaner` para limpiar datos de audiencias aplicando
+reglas de limpieza.
+
+Version: 0.1.10
+
+"""
 from data_cleaner import DataCleaner
 import pandas as pd
 
 #input_path = "contratos_vigentes_2015.csv"
-#output_path = "clear_contratos_vigentes_2015.csv"
+#DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
 
-input_path = "contratos_hasta_2015.csv"
-output_path = "clear_contratos_hasta_2015.csv"
+DEFAULT_INPUT_PATH  = "contratos_hasta_2015.csv"
+DEFAULT_OUTPUT_PATH = "clear_contratos_hasta_2015.csv"
 
-df = pd.read_csv(input_path, encoding="utf8")
+df = pd.read_csv(DEFAULT_INPUT_PATH , encoding="utf8")
 
 df
 
@@ -65,6 +73,45 @@ rules = [
 ]
 
 
-dc = DataCleaner(input_path)
+dc = DataCleaner(DEFAULT_INPUT_PATH )
 
-dc.clean_file(rules, output_path)
+dc.clean_file(rules, DEFAULT_OUTPUT_PATH)
+
+
+def custom_cleaning_before_rules(dc):
+    """Script de limpieza custom para aplicar al objeto antes de las reglas.
+    Args:
+        dc (DataCleaner): Objeto data cleaner con datos cargados.
+    """
+    pass
+
+
+def custom_cleaning_after_rules(dc):
+    """Script de limpieza custom para aplicar al objeto después de las reglas.
+    Args:
+        dc (DataCleaner): Objeto data cleaner con datos cargados.
+    """
+    pass
+
+
+def clean_file(input_path, output_path):
+    """Limpia los datos del input creando un nuevo archivo limpio."""
+    print("Comenzando limpieza...")
+    dc = DataCleaner(input_path)
+    custom_cleaning_before_rules(dc)
+    dc.clean(rules)
+    custom_cleaning_after_rules(dc)
+    dc.save(output_path)
+    print("Limpieza finalizada exitosamente!")
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        clean_file(DEFAULT_INPUT_PATH, DEFAULT_OUTPUT_PATH)
+    elif len(sys.argv) == 2:
+        clean_file(sys.argv[1], DEFAULT_OUTPUT_PATH)
+    elif len(sys.argv) == 3:
+        clean_file(sys.argv[1], sys.argv[2])
+    else:
+        print("{} no es una cantidad de argumentos aceptada.".format(
+            len(sys.argv) - 1
+        ))
