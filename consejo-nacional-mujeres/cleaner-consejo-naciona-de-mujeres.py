@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from data_cleaner import DataCleaner
 
 data_path = '/home/mec/Downloads/'
