@@ -99,11 +99,32 @@ RULES = [
 ]
 
 
+def custom_cleaning_before_rules(dc):
+    """Script de limpieza custom para aplicar al objeto antes de las reglas.
+
+    Args:
+        dc (DataCleaner): Objeto data cleaner con datos cargados.
+    """
+    pass
+
+
+def custom_cleaning_after_rules(dc):
+    """Script de limpieza custom para aplicar al objeto después de las reglas.
+
+    Args:
+        dc (DataCleaner): Objeto data cleaner con datos cargados.
+    """
+    pass
+
+
 def clean_file(input_path, output_path):
     """Limpia los datos del input creando un nuevo archivo limpio."""
     print("Comenzando limpieza...")
     dc = DataCleaner(input_path)
-    dc.clean_file(RULES, output_path)
+    custom_cleaning_before_rules(dc)
+    dc.clean(RULES)
+    custom_cleaning_after_rules(dc)
+    dc.save(output_path)
     print("Limpieza finalizada exitosamente!")
 
 if __name__ == '__main__':
