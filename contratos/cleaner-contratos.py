@@ -10,60 +10,79 @@ Version: 0.1.10
 """
 from data_cleaner import DataCleaner
 import pandas as pd
-
+import sys
 #input_path = "contratos_vigentes_2015.csv"
 #DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
 
-DEFAULT_INPUT_PATH  = "contratos_hasta_2015.csv"
-DEFAULT_OUTPUT_PATH = "clear_contratos_hasta_2015.csv"
+DEFAULT_INPUT_PATH  = "contratos-hasta-2015-raw.csv"
+DEFAULT_OUTPUT_PATH = "contratos-hasta-2015-clean.csv"
 
 RULES = [
-    
+    {
+        "remover_columnas": [
+            {"field": "obligadodependenciaid"},
+            {"field": "obligadoid"},
+            {"field": "dependenciaid"},
+            {"field": "dependencia_depende"},
+            {"field": "dependencia_posicion"},
+            {"field": "rootdependenciaid"},
+            {"field": "solicitanteid"},
+            {"field": "solic_personajuridica"},
+            {"field": "tipointeresinvocadoid"},
+            {"field": "tipocaracterid"},
+            {"field": "representadoid"},
+            {"field": "tipoestadoid"},
+            {"field": "tipoestadonorealizadaid"},
+            {"field": "obligadoasesorid"},
+            {"field": "dependenciadescripcion"},
+
+        ]
+    },
     {
         "nombre_propio": [
-            {"field": "titulo"},
-            {"field": "financiacion"},
-            {"field": "nombre_organismo"},
-            {"field": "apellido"},
-            {"field": "nombre"},
-            {"field": "denominacion_del_organismo"},
-            {"field": "tipo_organismo"},
-            {"field": "jurisdiccion"},
-            {"field": "FH_Desactivado"},
-
+            {"field": "obligado_cargo", "keep_original": False},
+            {"field": "obligado_apellido", "keep_original": False},
+            {"field": "obligado_nombre", "keep_original": False},
+            {"field": "dependencia_descripcion", "keep_original": False},
+            {"field": "rootdependenciadescripcion", "keep_original": False},
+            {"field": "solic_apellido", "keep_original": False},
+            {"field": "solic_nombre", "keep_original": False},
+            {"field": "solic_cargo", "keep_original": False},
+            {"field": "interes_invocado", "keep_original": False},
+            {"field": "desc_caracter", "keep_original": False},
+            {"field": "representado_apellido", "keep_original": False},
+            {"field": "desc_estado", "keep_original": False},
+            {"field": "obligadoasesorcargo", "keep_original": False},
+            {"field": "asesor_apellido", "keep_original": False},
+            {"field": "asesor_nombre", "keep_original": False},
+            {"field": "asesor_cargo", "keep_original": False},
         ]
     },
     {
-        "fecha_simple": [
-            {"field": "desde", "time_format": "YYYY/MM/DD"},
-            {"field": "hasta", "time_format": "YYYY/MM/DD"},
-            {"field": "alta_fecha", "time_format": "YYYY/MM/DD"},
-            {"field": "mod_fecha", "time_format": "YYYY/MM/DD"},
-            {"field": "fecha_ultimo_envio", "time_format": "YYYY/MM/DD"},
-            
-
+        "string": [
+            {"field": "obligado_cargo", "keep_original": False},
+            {"field": "obligado_apellido", "keep_original": False},
+            {"field": "obligado_nombre", "keep_original": False},
+            {"field": "dependencia_descripcion", "keep_original": False},
+            {"field": "rootdependenciadescripcion", "keep_original": False},
+            {"field": "solic_apellido", "keep_original": False},
+            {"field": "solic_nombre", "keep_original": False},
+            {"field": "solic_cargo", "keep_original": False},
+            {"field": "interes_invocado", "keep_original": False},
+            {"field": "desc_caracter", "keep_original": False},
+            {"field": "representado_apellido", "keep_original": False},
+            {"field": "desc_estado", "keep_original": False},
+            {"field": "obligadoasesorcargo", "keep_original": False},
+            {"field": "asesor_apellido", "keep_original": False},
+            {"field": "asesor_nombre", "keep_original": False},
+            {"field": "asesor_cargo", "keep_original": False},
         ]
     },
-    
-        {"reemplazar": [
-            {
-            "field": "locacion",
-            "replacements": {"Servicios": ["Serv"]}
-            }
-        ]
-    },
-    
-     {"renombrar_columnas": [
-        {"field": "alta_fecha", "new_field": "fecha_alta_registro_rcpc"},
-        {"field": "mod_fecha", "new_field": "fecha_modificacion_registro_rcpc"}
+    {"fecha_completa": [
+        {"field": "fechaaudiencia", "time_format": "YY-MM-DD HH:mm:ss"},
     ]},
-    
-    {"remover_columnas": [
-        {"field": "estudios"},
-        {"field": "titulo"},
-        {"field": "nivel_grado"},
-        {"field": "id_unico_borrar"},
-        {"field": "nacimiento"}
+    {"fecha_simple": [
+        {"field": "fechasolicitud", "time_format": "YY-MM-DD HH:mm:ss"},
     ]}
 ]
 
@@ -89,7 +108,7 @@ def custom_cleaning_after_rules(dc):
 def clean_file(input_path, output_path):
     """Limpia los datos del input creando un nuevo archivo limpio."""
     print("Comenzando limpieza...")
-    dc = DataCleaner(input_path)
+    dc = DataCleaner(input_path, encoding='Latin 1')
     custom_cleaning_before_rules(dc)
     dc.clean(RULES)
     custom_cleaning_after_rules(dc)
