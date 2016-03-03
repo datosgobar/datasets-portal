@@ -22,8 +22,9 @@ import sys
 
 from data_cleaner import DataCleaner
 
-DEFAULT_INPUT_PATH = "acceso-informacion-publica.csv"
+DEFAULT_INPUT_PATH = "acceso-informacion-publica-raw.csv"
 DEFAULT_OUTPUT_PATH = "acceso-informacion-publica-clean.csv"
+
 
 RULES = [
     {
@@ -132,12 +133,9 @@ RULES = [
     ]},
 
     {"fecha_completa": [
-        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_organismo",
-         "time_format": "M/D/YYYY", "keep_original": True},
-        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_enlace",
-         "time_format": "M/D/YYYY", "keep_original": True},
-        {"field": "fecha_de_la_respuesta",
-         "time_format": "DD/MM/YYYY", "keep_original": True}
+        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_organismo", "time_format": "M/D/YYYY", "keep_original": True},
+        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_enlace", "time_format": "M/D/YYYY","keep_original": True},
+        {"field": "fecha_de_la_respuesta", "time_format": "DD/MM/YYYY","keep_original": True}
      ]},
       {
         "string_regex_substitute": [
@@ -166,13 +164,13 @@ RULES = [
 
 ]
 
-
 def custom_cleaning_before_rules(dc):
     """Script de limpieza custom para aplicar al objeto antes de las reglas.
 
     Args:
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
+    dc.df['pedidos'] = dc.df['pedidos'].fillna(method='ffill') #  Completar los pedidos en blanco con el ultimo valido
     dc.df['perfil_del_solicitante'] = dc.df['perfil_del_solicitante'].fillna("")
     dc.df['sector_al_que_se_dirige_la_solicitud'] = dc.df['sector_al_que_se_dirige_la_solicitud'].fillna("")
     dc.df['razon_social_del_solicitante'] = dc.df['razon_social_del_solicitante'].fillna("")
