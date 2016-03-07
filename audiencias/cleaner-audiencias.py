@@ -13,7 +13,10 @@ específicas para ese dataset antes de aplicar reglas de limpieza. Estas tareas
 no buscarían implementar una nueva regla de limpieza en la clase extensible
 MyDataCleaner sino que se escribirían en los métodos provistos que actúan antes
 o después de la aplicación de reglas.
+
+Versión del data-cleaner: 0.1.14
 """
+
 
 from __future__ import unicode_literals
 from __future__ import print_function
@@ -87,12 +90,29 @@ RULES = [
             {"field": "asesor_cargo", "keep_original": False},
         ]
     },
-    {"fecha_completa": [
-        {"field": "fechaaudiencia", "time_format": "YY-MM-DD HH:mm:ss"},
-    ]},
-    {"fecha_simple": [
-        {"field": "fechasolicitud", "time_format": "YY-MM-DD HH:mm:ss"},
-    ]}
+    {
+        "fecha_completa": [
+            {"field": "fechaaudiencia", "time_format": "YY-MM-DD HH:mm:ss"},
+        ]
+    },
+    {
+        "fecha_simple": [
+            {"field": "fechasolicitud", "time_format": "YY-MM-DD HH:mm:ss"},
+        ]
+    },
+    {
+        "renombrar_columnas": [
+            {"field": "audienciaid", "new_field": "audiencia_id"},
+            {"field": "rootdependenciadescripcion",
+                "new_field": "root_dependencia_descripcion"},
+            {"field": "fechasolicitud", "new_field": "fecha_solicitud"},
+            {"field": "fechaaudiencia", "new_field": "fecha_audiencia"},
+            {"field": "representado_personajuridica",
+                "new_field": "representado_persona_juridica"},
+            {"field": "obligadoasesorcargo",
+             "new_field": "obligado_asesor_cargo"}
+        ]
+    }
 ]
 
 
