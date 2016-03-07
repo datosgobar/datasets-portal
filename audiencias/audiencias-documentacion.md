@@ -68,7 +68,7 @@ Información correspondiente a las solicitudes de audiencias a funcionarios púb
 
 * **fecha_audiencia (datetime):** Fecha y hora en que se realizó la audiencia.
 
-* **lugar (string): ** Lugar de la Audiencia.
+* **lugar (string):** Lugar de la Audiencia.
 
 * **objeto (string):** Finalidad de la Audiencia.
 
