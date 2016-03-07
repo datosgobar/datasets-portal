@@ -66,9 +66,9 @@ Información correspondiente a las solicitudes de audiencias a funcionarios púb
 
 * **representado_apellido (string):** Apellido del Representado
 
-* **fecha_audiencia (datetime):  **Fecha y hora en que se realizó la audiencia.
+* **fecha_audiencia (datetime):** Fecha y hora en que se realizó la audiencia.
 
-* **lugar (string):  ** solic_nombreLugar de la Audiencia.
+* **lugar (string): ** Lugar de la Audiencia.
 
 * **objeto (string):** Finalidad de la Audiencia.
 
