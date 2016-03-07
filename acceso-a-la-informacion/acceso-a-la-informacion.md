@@ -64,8 +64,6 @@ En este cuerpo de datos se detallan los pedidos de acceso a la información que 
 
 * **perfil_del_solicitante (string):** Perfil del solicitante. (Ej. ONG, Sindicato, Particular)
 
-* **razon_social_del_solicitante (string):** Razón social del solicitante si la tuviera.
-
 * **sintesis_de_la_solicitud (string):** Resúmen del objeto sobre el cual se realiza el pedido de acceso a información. 
 
 * **rubro_de_solicitud_de_informacion (string):** Rubro sobre el cual se realiza el pedido de acceso a información. 
