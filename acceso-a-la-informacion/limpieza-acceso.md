@@ -18,8 +18,6 @@ Llevar los nombres a formato estándar.
 
 **fecha_de_recepcion_de_la_solicitud_por_el_enlace:**  llevar a iso date
 
-**razon_social_del_solicitante:**  quitar valores *[ '#REF!', 'Complete aqu\xed', 'complete aqu\xed', 'Tipee si es una nueva Raz\xf3n S.' ]* y Capitalizar
-
 **sector_al_que_derivo_el_enlace_dentro_del_organismo:** Quitar puntos iniciales y Capitalizar
 
 **plazo_en_el_que_se_contesto_la_solicitud:** Quitar valores *[ 'Complete aqu\xed', 'NO COMPLETAR' ]*

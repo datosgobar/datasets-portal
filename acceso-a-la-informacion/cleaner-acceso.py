@@ -39,31 +39,6 @@ RULES = [
              "regex_str_sub": "",
              "keep_original": False
              },
-            {"field": "razon_social_del_solicitante",
-             "regex_str_match": "#REF!",
-             "regex_str_sub": "",
-             "keep_original": False
-             },
-            {"field": "razon_social_del_solicitante",
-             "regex_str_match": u"Complete aquí",
-             "regex_str_sub": "",
-             "keep_original": False
-             },
-            {"field": "razon_social_del_solicitante",
-             "regex_str_match": u"complete aquí",
-             "regex_str_sub": "",
-             "keep_original": False
-             },
-            {"field": "razon_social_del_solicitante",
-             "regex_str_match": "Err:.+",
-             "regex_str_sub": "",
-             "keep_original": False
-             },
-            {"field": "razon_social_del_solicitante",
-             "regex_str_match": u"Tipee Si Es Una Nueva Razón S\.",
-             "regex_str_sub": "",
-             "keep_original": False
-             },
             {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
              "regex_str_match": "^\.+",
              "regex_str_sub": "",
@@ -128,7 +103,6 @@ RULES = [
     },
     {"nombre_propio": [
         {"field": "sector_al_que_se_dirige_la_solicitud", "keep_original": False},
-        {"field": "razon_social_del_solicitante", "keep_original": False},
         {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo", "keep_original": False},
     ]},
 
@@ -173,7 +147,6 @@ def custom_cleaning_before_rules(dc):
     dc.df['pedidos'] = dc.df['pedidos'].fillna(method='ffill') #  Completar los pedidos en blanco con el ultimo valido
     dc.df['perfil_del_solicitante'] = dc.df['perfil_del_solicitante'].fillna("")
     dc.df['sector_al_que_se_dirige_la_solicitud'] = dc.df['sector_al_que_se_dirige_la_solicitud'].fillna("")
-    dc.df['razon_social_del_solicitante'] = dc.df['razon_social_del_solicitante'].fillna("")
     dc.df['rubro_de_solicitud_de_informacion'] = dc.df['rubro_de_solicitud_de_informacion'].fillna("")
     dc.df['sector_al_que_derivo_el_enlace_dentro_del_organismo'] = dc.df['sector_al_que_derivo_el_enlace_dentro_del_organismo'].fillna("")
     dc.df['cargo_del_funcionario_que_firma_la_entrega_de_la_informacion'] = dc.df['cargo_del_funcionario_que_firma_la_entrega_de_la_informacion'].fillna("")
