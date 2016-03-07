@@ -14,7 +14,7 @@ no buscarían implementar una nueva regla de limpieza en la clase extensible
 MyDataCleaner sino que se escribirían en los métodos provistos que actúan antes
 o después de la aplicación de reglas.
 
-Versión del data-cleaner: 0.1.14
+Versión del data-cleaner: 0.1.15
 """
 
 
