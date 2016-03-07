@@ -26,11 +26,6 @@ RULES =[
             {"field": "nombre_organismo"},
             {"field": "apellido"},
             {"field": "nombre"},
-            {"field": "denominacion_del_organismo"},
-            {"field": "tipo_organismo"},
-            {"field": "jurisdiccion"},
-            {"field": "FH_Desactivado"},
-
         ]
     },
     {
@@ -39,9 +34,6 @@ RULES =[
             {"field": "hasta", "time_format": "YYYY/MM/DD"},
             {"field": "alta_fecha", "time_format": "YYYY/MM/DD"},
             {"field": "mod_fecha", "time_format": "YYYY/MM/DD"},
-            {"field": "fecha_ultimo_envio", "time_format": "YYYY/MM/DD"},
-
-
         ]
     },
 
@@ -62,7 +54,7 @@ RULES =[
         {"field": "estudios"},
         {"field": "titulo"},
         {"field": "nivel_grado"},
-        {"field": "id_unico_borrar"},
+        {"field": "id_unico"},
         {"field": "nacimiento"}
     ]}
 ]
