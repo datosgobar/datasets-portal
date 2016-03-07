@@ -44,7 +44,7 @@ Información correspondiente a las solicitudes de audiencias a funcionarios púb
 
 * **dependencia_descripcion (string):** Nombre de la Dependencia Estatal en la que se solicitó una Audiencia.
 
-* **root_dependencia_descripcion (string):** Nombre del Organismo Estatal de máxima jerarquía al que pertence la dependencia.
+* **root_dependencia_descripcion (string):** Nombre del Organismo Estatal al que pertence la dependencia.
 
 * **fecha_solicitud (date):** Fecha en que fue solicitada la audiencia.
 
