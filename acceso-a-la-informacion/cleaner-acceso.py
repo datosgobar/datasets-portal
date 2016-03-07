@@ -19,7 +19,7 @@ from __future__ import unicode_literals
 from __future__ import print_function
 from __future__ import with_statement
 import sys
-
+import pandas as pd
 from data_cleaner import DataCleaner
 
 DEFAULT_INPUT_PATH = "acceso-informacion-publica-raw.csv"
@@ -99,6 +99,16 @@ RULES = [
              "regex_str_sub": "",
              "keep_original": False
              },
+             {"field": "fecha_de_la_respuesta",
+              "regex_str_match": u"Complete aquí",
+              "regex_str_sub": "",
+              "keep_original": False
+              },
+             {"field": "fecha_de_la_respuesta",
+              "regex_str_match": "NO COMPLETAR",
+              "regex_str_sub": "",
+              "keep_original": False
+              },
         ]
     },
     {"nombre_propio": [
@@ -161,7 +171,14 @@ def custom_cleaning_after_rules(dc):
     Args:
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
-    pass
+    #  Saco datos que no peretencen al rango de fechas
+    gi_resp = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year > 2010
+    gi_solicitud = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_organismo']).dt.year > 2010
+    gi_enlace = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_enlace']).dt.year > 2010
+    ge = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).isnull()
+    gu = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year < 2016
+    gi = gi_resp & gi_solicitud & gi_enlace & gu
+    dc.df = dc.df[gi | ge]
 
 
 class MyDataCleaner(DataCleaner):
