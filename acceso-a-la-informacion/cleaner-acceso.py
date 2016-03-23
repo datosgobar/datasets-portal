@@ -109,6 +109,16 @@ RULES = [
               "regex_str_sub": "",
               "keep_original": False
               },
+              {"field": "fecha_de_la_respuesta",
+              "regex_str_match": u"2010",
+              "regex_str_sub": "2015",
+              "keep_original": False
+              },
+             {"field": "fecha_de_la_respuesta",
+              "regex_str_match": "2017",
+              "regex_str_sub": "2015",
+              "keep_original": False
+              },
         ]
     },
     {"nombre_propio": [
@@ -155,6 +165,8 @@ def custom_cleaning_before_rules(dc):
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
     dc.df['pedidos'] = dc.df['pedidos'].fillna(method='ffill') #  Completar los pedidos en blanco con el ultimo valido
+    dc.df['pedidos']= dc.df['pedidos'].astype('int32')
+    dc.df['casos']= dc.df['casos'].astype('int32')
     dc.df['perfil_del_solicitante'] = dc.df['perfil_del_solicitante'].fillna("")
     dc.df['sector_al_que_se_dirige_la_solicitud'] = dc.df['sector_al_que_se_dirige_la_solicitud'].fillna("")
     dc.df['rubro_de_solicitud_de_informacion'] = dc.df['rubro_de_solicitud_de_informacion'].fillna("")
@@ -172,13 +184,13 @@ def custom_cleaning_after_rules(dc):
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
     #  Saco datos que no peretencen al rango de fechas
-    gi_resp = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year > 2010
-    gi_solicitud = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_organismo']).dt.year > 2010
-    gi_enlace = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_enlace']).dt.year > 2010
-    ge = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).isnull()
-    gu = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year < 2016
-    gi = gi_resp & gi_solicitud & gi_enlace & gu
-    dc.df = dc.df[gi | ge]
+    #gi_resp = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year > 2010
+    #gi_solicitud = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_organismo']).dt.year > 2010
+    #gi_enlace = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_enlace']).dt.year > 2010
+    #ge = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).isnull()
+    #gu = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year < 2016
+    #gi = gi_resp & gi_solicitud & gi_enlace & gu
+    #dc.df = dc.df[gi | ge]
 
 
 class MyDataCleaner(DataCleaner):
