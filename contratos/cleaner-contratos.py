@@ -11,13 +11,14 @@ Version: 0.1.10
 from data_cleaner import DataCleaner
 import pandas as pd
 import sys
-#input_path = "contratos_vigentes_2015.csv"
-#DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
+# input_path = "contratos_vigentes_2015.csv"
+# DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
 
-DEFAULT_INPUT_PATH  = "contratos-hasta-2015-raw.csv"
-DEFAULT_OUTPUT_PATH = "contratos-hasta-2015-clean.csv"
+DEFAULT_INPUT_PATH = "contratos-hasta-2015-raw.csv"
+DEFAULT_OUTPUT_PATH_VIGENTE = "contratos-2015-clean.csv"
+DEFAULT_OUTPUT_PATH1_HISTORICO = "contratos-historico-clean.csv"
 
-RULES =[
+RULES = [
 
     {
         "nombre_propio": [
@@ -85,14 +86,32 @@ def clean_file(input_path, output_path):
     custom_cleaning_before_rules(dc)
     dc.clean(RULES)
     custom_cleaning_after_rules(dc)
-    dc.save(output_path)
+    y = 2015
+    dc.df.hasta = pd.to_datetime(dc.df.hasta, yearfirst=True)
+    dc.df.desde = pd.to_datetime(dc.df.desde, yearfirst=True)
+    gii = dc.df.desde.dt.year == y
+    gif = dc.df.hasta.dt.year == y
+    gis = (dc.df.desde.dt.year < y) & (dc.df.hasta.dt.year > y)
+    givig = gii | gif | gis
+    df1 = dc.df[givig]
+    gin2016 = dc.df.desde.dt.year == 2016
+    df2 = dc.df[~gin2016]
+    df1.set_index(df1.columns[0]).to_csv(
+        DEFAULT_OUTPUT_PATH_VIGENTE, encoding=dc.OUTPUT_ENCODING,
+        separator=dc.OUTPUT_SEPARATOR,
+        quotechar=dc.OUTPUT_QUOTECHAR)
+    df2.set_index(df2.columns[0]).to_csv(
+        DEFAULT_OUTPUT_PATH1_HISTORICO, encoding=dc.OUTPUT_ENCODING,
+        separator=dc.OUTPUT_SEPARATOR,
+        quotechar=dc.OUTPUT_QUOTECHAR)
+
     print("Limpieza finalizada exitosamente!")
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        clean_file(DEFAULT_INPUT_PATH, DEFAULT_OUTPUT_PATH)
+        clean_file(DEFAULT_INPUT_PATH, DEFAULT_OUTPUT_PATH_VIGENTE)
     elif len(sys.argv) == 2:
-        clean_file(sys.argv[1], DEFAULT_OUTPUT_PATH)
+        clean_file(sys.argv[1], DEFAULT_OUTPUT_PATH_VIGENTE)
     elif len(sys.argv) == 3:
         clean_file(sys.argv[1], sys.argv[2])
     else:
