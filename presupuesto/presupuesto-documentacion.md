@@ -156,21 +156,6 @@ Por otro lado los campos con el prefijo monto corresponden a las distintas etapa
 
 * **Pagado:** A través de la etapa del pago, se refleja la cancelación de las obligaciones asumidas en materia de gasto
 
-## Notas
-
-Los siguientes campos mencionados en el archivo "Propuesta Presupuesto Nacional" no parecen estar en Gastos_Listado_General-2.csv :
-
-* Unidad Ejecutora
-
-* Descripción Unidad Ejecutora
-
-* Monto Vigente
-
-Por otro lado los siguientes campos aparecen en el archivo csv original pero pero no son mencionados en la propuesta
-
-* Leyenda_Fecha_Act (renombrado como leyenda_fecha_act)
-
-* Ejercicio-Actual (renombrado como ejercicio_actual).
 
 ## Preprocesamiento
 
