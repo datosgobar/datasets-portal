@@ -22,7 +22,7 @@ Datos correspondientes a la ejecución presupuestaria de la Administración Púb
 
 * **Frecuencia de Actualización:** Semanal.
 
-Recursos
+# Recursos
 
 ## Presupuesto Nacional Año 2016
 
@@ -36,7 +36,7 @@ Recursos
 
 * **caracter (string):** Carácter
 
-* **jurisdiccion_id  (string): ** Jurisdicción
+* **jurisdiccion_id  (string):** Jurisdicción
 
 * **jurisdiccion_desc (string):** Descripción Jurisdicción
 
