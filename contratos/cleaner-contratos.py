@@ -14,7 +14,7 @@ import sys
 # input_path = "contratos_vigentes_2015.csv"
 # DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
 
-DEFAULT_INPUT_PATH = "contratos-hasta-2015-raw.csv"
+DEFAULT_INPUT_PATH = "contratos-concatenados-raw.csv"
 DEFAULT_OUTPUT_PATH_VIGENTE = "contratos-2015-clean.csv"
 DEFAULT_OUTPUT_PATH1_HISTORICO = "contratos-historico-clean.csv"
 
@@ -22,7 +22,6 @@ RULES = [
 
     {
         "nombre_propio": [
-            {"field": "titulo"},
             {"field": "financiacion"},
             {"field": "nombre_organismo"},
             {"field": "apellido"},
@@ -31,31 +30,29 @@ RULES = [
     },
     {
         "fecha_simple": [
-            {"field": "desde", "time_format": "YYYY/MM/DD"},
-            {"field": "hasta", "time_format": "YYYY/MM/DD"},
             {"field": "alta_fecha", "time_format": "YYYY/MM/DD"},
             {"field": "mod_fecha", "time_format": "YYYY/MM/DD"},
         ]
     },
 
-        {"reemplazar": [
-            {
-            "field": "locacion",
-            "replacements": {"Servicios": ["Serv"]}
-            }
+    {
+        "reemplazar": [
+            {"field": "locacion",
+             "replacements": {"Servicios": ["Serv"]}
+             }
         ]
     },
 
-     {"renombrar_columnas": [
+    {"renombrar_columnas": [
         {"field": "alta_fecha", "new_field": "fecha_alta_registro_rcpc"},
-        {"field": "mod_fecha", "new_field": "fecha_modificacion_registro_rcpc"}
+        {"field": "mod_fecha", "new_field": "fecha_modificacion_registro_rcpc"},
+        {"field": "id_unico", "new_field": "id_organismo"},
     ]},
 
     {"remover_columnas": [
         {"field": "estudios"},
         {"field": "titulo"},
         {"field": "nivel_grado"},
-        {"field": "id_unico"},
         {"field": "nacimiento"}
     ]}
 ]
@@ -82,7 +79,7 @@ def custom_cleaning_after_rules(dc):
 def clean_file(input_path, output_path):
     """Limpia los datos del input creando un nuevo archivo limpio."""
     print("Comenzando limpieza...")
-    dc = DataCleaner(input_path, encoding='Latin 1')
+    dc = DataCleaner(input_path, encoding='utf-8')
     custom_cleaning_before_rules(dc)
     dc.clean(RULES)
     custom_cleaning_after_rules(dc)
@@ -93,17 +90,21 @@ def clean_file(input_path, output_path):
     gif = dc.df.hasta.dt.year == y
     gis = (dc.df.desde.dt.year < y) & (dc.df.hasta.dt.year > y)
     givig = gii | gif | gis
-    df1 = dc.df[givig]
+    df1 = dc.df[givig].copy()
+    print("La cantida de registros 2015 es: ")
+    print(givig.sum())
     gin2016 = dc.df.desde.dt.year == 2016
-    df2 = dc.df[~gin2016]
-    df1.set_index(df1.columns[0]).to_csv(
+    df2 = dc.df[~gin2016].copy()
+    print("La cantida de registros historicos es: ")
+    print((~gin2016).sum())
+    df1.to_csv(
         DEFAULT_OUTPUT_PATH_VIGENTE, encoding=dc.OUTPUT_ENCODING,
         separator=dc.OUTPUT_SEPARATOR,
-        quotechar=dc.OUTPUT_QUOTECHAR)
-    df2.set_index(df2.columns[0]).to_csv(
+        quotechar=dc.OUTPUT_QUOTECHAR, index=False)
+    df2.to_csv(
         DEFAULT_OUTPUT_PATH1_HISTORICO, encoding=dc.OUTPUT_ENCODING,
         separator=dc.OUTPUT_SEPARATOR,
-        quotechar=dc.OUTPUT_QUOTECHAR)
+        quotechar=dc.OUTPUT_QUOTECHAR, index=False)
 
     print("Limpieza finalizada exitosamente!")
 
