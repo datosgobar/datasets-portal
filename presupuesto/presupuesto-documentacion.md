@@ -22,7 +22,11 @@ Datos correspondientes a la ejecución presupuestaria de la Administración Púb
 
 * **Frecuencia de Actualización:** Semanal.
 
+<<<<<<< HEAD
 Recursos
+=======
+# Recursos
+>>>>>>> d066e537cf9f95163d71e7bc7596595c4283adcd
 
 ## Presupuesto Nacional Año 2016
 
@@ -36,7 +40,11 @@ Recursos
 
 * **caracter (string):** Carácter
 
+<<<<<<< HEAD
 * **jurisdiccion_id  (string): ** Jurisdicción
+=======
+* **jurisdiccion_id  (string):** Jurisdicción
+>>>>>>> d066e537cf9f95163d71e7bc7596595c4283adcd
 
 * **jurisdiccion_desc (string):** Descripción Jurisdicción
 
@@ -156,6 +164,7 @@ Por otro lado los campos con el prefijo monto corresponden a las distintas etapa
 
 * **Pagado:** A través de la etapa del pago, se refleja la cancelación de las obligaciones asumidas en materia de gasto
 
+<<<<<<< HEAD
 ## Notas
 
 Los siguientes campos mencionados en el archivo "Propuesta Presupuesto Nacional" no parecen estar en Gastos_Listado_General-2.csv :
@@ -171,6 +180,8 @@ Por otro lado los siguientes campos aparecen en el archivo csv original pero per
 * Leyenda_Fecha_Act (renombrado como leyenda_fecha_act)
 
 * Ejercicio-Actual (renombrado como ejercicio_actual).
+=======
+>>>>>>> d066e537cf9f95163d71e7bc7596595c4283adcd
 
 ## Preprocesamiento
 
