@@ -4,3 +4,7 @@ Se muestran algunos ejemplos de limpieza de datos aplicados a datasets publicado
 
 * **directivas-limpieza:** Contiene una descripción de los procesos de limpieza que deben llevarse a cabo sobre ese dataset.
 * **cleaner-...py :** Implementación de las directivas usando la librería [data_cleaner](https://github.com/gobabiertoAR/data-cleaner)
+
+# Portal Legacy
+
+Contiene datasets de la versión anterior del Portal de Datos Abiertos que se encuentran discontinuados.
