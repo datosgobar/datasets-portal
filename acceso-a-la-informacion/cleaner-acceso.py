@@ -85,20 +85,21 @@ RULES = [
              "keep_original": False
              },
             {"field": "cargo_del_funcionario_que_firma_la_entrega_de_la_informacion",
-             "regex_str_match": u"\u2026", # sacar caracter de puntos suspensivos
+             "regex_str_match": u"\u2026",  # sacar caracter de puntos suspensivos
              "regex_str_sub": "",
              "keep_original": False
              },
             {"field": "cargo_del_funcionario_que_firma_la_entrega_de_la_informacion",
-             "regex_str_match": u"Complete aquí", # sacar caracter de puntos suspensivos
+             "regex_str_match": u"Complete aquí",  # sacar caracter de puntos suspensivos
              "regex_str_sub": "",
              "keep_original": False
              },
             {"field": "cargo_del_funcionario_que_firma_la_entrega_de_la_informacion",
-             "regex_str_match": u"NO COMPLETAR", # sacar caracter de puntos suspensivos
+             "regex_str_match": u"NO COMPLETAR",  # sacar caracter de puntos suspensivos
              "regex_str_sub": "",
              "keep_original": False
              },
+<<<<<<< HEAD
              {"field": "fecha_de_la_respuesta",
               "regex_str_match": u"Complete aquí",
               "regex_str_sub": "",
@@ -119,36 +120,63 @@ RULES = [
               "regex_str_sub": "2015",
               "keep_original": False
               },
+=======
+            {"field": "fecha_de_la_respuesta",
+             "regex_str_match": u"Complete aquí",
+             "regex_str_sub": "",
+             "keep_original": False
+             },
+            {"field": "fecha_de_la_respuesta",
+             "regex_str_match": "NO COMPLETAR",
+             "regex_str_sub": "",
+             "keep_original": False
+             },
+            {"field": "fecha_de_la_respuesta",
+             "regex_str_match": u"2010",
+             "regex_str_sub": "2015",
+             "keep_original": False
+             },
+            {"field": "fecha_de_la_respuesta",
+             "regex_str_match": "2017",
+             "regex_str_sub": "2015",
+             "keep_original": False
+             },
+>>>>>>> a7104997e195bb23e4882709bbc9efb11640fe05
         ]
     },
     {"nombre_propio": [
-        {"field": "sector_al_que_se_dirige_la_solicitud", "keep_original": False},
-        {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo", "keep_original": False},
+        {"field": "sector_al_que_se_dirige_la_solicitud",
+         "keep_original": False},
+        {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
+            "keep_original": False},
     ]},
 
     {"fecha_completa": [
-        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_organismo", "time_format": "M/D/YYYY", "keep_original": True},
-        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_enlace", "time_format": "M/D/YYYY","keep_original": True},
-        {"field": "fecha_de_la_respuesta", "time_format": "DD/MM/YYYY","keep_original": True}
-     ]},
-      {
+        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_organismo",
+            "time_format": "M/D/YYYY", "keep_original": True},
+        {"field": "fecha_de_recepcion_de_la_solicitud_por_el_enlace",
+            "time_format": "M/D/YYYY", "keep_original": True},
+        {"field": "fecha_de_la_respuesta",
+            "time_format": "DD/MM/YYYY", "keep_original": True}
+    ]},
+    {
         "string_regex_substitute": [
             {"field": "sector_al_que_se_dirige_la_solicitud",
              "regex_str_match": "Dniece",
              "regex_str_sub": "DNIECE",
              "keep_original": False
              },
-             {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
+            {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
              "regex_str_match": "Enre",
              "regex_str_sub": "ENRE",
              "keep_original": False
              },
-             {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
+            {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
              "regex_str_match": "Telam",
              "regex_str_sub": "TELAM",
              "keep_original": False
              },
-             {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
+            {"field": "sector_al_que_derivo_el_enlace_dentro_del_organismo",
              "regex_str_match": "Renaper",
              "regex_str_sub": "ReNaPer",
              "keep_original": False
@@ -158,12 +186,14 @@ RULES = [
 
 ]
 
+
 def custom_cleaning_before_rules(dc):
     """Script de limpieza custom para aplicar al objeto antes de las reglas.
 
     Args:
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
+<<<<<<< HEAD
     dc.df['pedidos'] = dc.df['pedidos'].fillna(method='ffill') #  Completar los pedidos en blanco con el ultimo valido
     dc.df['pedidos']= dc.df['pedidos'].astype('int32')
     dc.df['casos']= dc.df['casos'].astype('int32')
@@ -175,6 +205,26 @@ def custom_cleaning_before_rules(dc):
     dc.df['plazo_en_el_que_se_contesto_la_solicitud'] = dc.df['plazo_en_el_que_se_contesto_la_solicitud'].fillna("")
     dc.df['forma_de_aviso_de_uso_de_la_prorroga_al_solicitante'] = dc.df['forma_de_aviso_de_uso_de_la_prorroga_al_solicitante'].fillna("")
 
+=======
+    dc.df['pedidos'] = dc.df['pedidos'].fillna(
+        method='ffill')  # Completar los pedidos en blanco con el ultimo valido
+    dc.df['pedidos'] = dc.df['pedidos'].astype('int32')
+    dc.df['casos'] = dc.df['casos'].astype('int32')
+    dc.df['perfil_del_solicitante'] = dc.df[
+        'perfil_del_solicitante'].fillna("")
+    dc.df['sector_al_que_se_dirige_la_solicitud'] = dc.df[
+        'sector_al_que_se_dirige_la_solicitud'].fillna("")
+    dc.df['rubro_de_solicitud_de_informacion'] = dc.df[
+        'rubro_de_solicitud_de_informacion'].fillna("")
+    dc.df['sector_al_que_derivo_el_enlace_dentro_del_organismo'] = dc.df[
+        'sector_al_que_derivo_el_enlace_dentro_del_organismo'].fillna("")
+    dc.df['cargo_del_funcionario_que_firma_la_entrega_de_la_informacion'] = dc.df[
+        'cargo_del_funcionario_que_firma_la_entrega_de_la_informacion'].fillna("")
+    dc.df['plazo_en_el_que_se_contesto_la_solicitud'] = dc.df[
+        'plazo_en_el_que_se_contesto_la_solicitud'].fillna("")
+    dc.df['forma_de_aviso_de_uso_de_la_prorroga_al_solicitante'] = dc.df[
+        'forma_de_aviso_de_uso_de_la_prorroga_al_solicitante'].fillna("")
+>>>>>>> a7104997e195bb23e4882709bbc9efb11640fe05
 
 
 def custom_cleaning_after_rules(dc):
@@ -184,6 +234,20 @@ def custom_cleaning_after_rules(dc):
         dc (DataCleaner): Objeto data cleaner con datos cargados.
     """
     #  Saco datos que no peretencen al rango de fechas
+<<<<<<< HEAD
+=======
+    gi_resp = pd.to_datetime(
+        dc.df['isodatetime_fecha_de_la_respuesta']).dt.year > 2010
+    gi_solicitud = pd.to_datetime(
+        dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_organismo']).dt.year > 2010
+    gi_enlace = pd.to_datetime(
+        dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_enlace']).dt.year > 2010
+    ge = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).isnull()
+    gu = pd.to_datetime(
+        dc.df['isodatetime_fecha_de_la_respuesta']).dt.year < 2016
+    gi = gi_resp & gi_solicitud & gi_enlace & gu
+    dc.df = dc.df[gi | ge]
+>>>>>>> a7104997e195bb23e4882709bbc9efb11640fe05
     #gi_resp = pd.to_datetime(dc.df['isodatetime_fecha_de_la_respuesta']).dt.year > 2010
     #gi_solicitud = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_organismo']).dt.year > 2010
     #gi_enlace = pd.to_datetime(dc.df['isodatetime_fecha_de_recepcion_de_la_solicitud_por_el_enlace']).dt.year > 2010

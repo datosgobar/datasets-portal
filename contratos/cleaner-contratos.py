@@ -14,7 +14,7 @@ import sys
 # input_path = "contratos_vigentes_2015.csv"
 # DEFAULT_OUTPUT_PATH = "clear_contratos_vigentes_2015.csv"
 
-DEFAULT_INPUT_PATH = "contratos-concatenados-raw.csv"
+DEFAULT_INPUT_PATH = "contratos-raw.csv"
 DEFAULT_OUTPUT_PATH_VIGENTE = "contratos-2015-clean.csv"
 DEFAULT_OUTPUT_PATH1_HISTORICO = "contratos-historico-clean.csv"
 
@@ -38,7 +38,29 @@ RULES = [
     {
         "reemplazar": [
             {"field": "locacion",
-             "replacements": {"Servicios": ["Serv"]}
+             "replacements": {"Servicios": ["Serv"],
+
+                              }
+             }
+        ]
+    },
+    {
+        "reemplazar": [
+            {"field": "financiacion",
+             "replacements": {"Dec. 1421/2002 - Convenio Dec.1133/09": ["Dec. 1133/2009"],
+                              "Dec. 1421/2002 - Convenio Conae": ["Convenio Conae"],
+                              "Dec. 1421/2002 - Convenio Docifa": ["Convenio Docifa"],
+                              "Dec. 1421/2002 - Convenio Pecifa": ["Convenio Pecifa"],
+                              "Dec. 1421/2002 - Convenio Senasa": ["Convenio Senasa"],
+                              "Dec. 1421/2002 - Convenio Sigen": ["Convenio Sigen"],
+                              "Dec. 2345/2008 - Fin. Int. B I D": ["Fin. Int. B I D"],
+                              "Dec. 2345/2008 - Fin. Int. B I R F": ["Fin. Int. B I R F"],
+                              "Dec. 2345/2008 - Fin. Int. B M": ["Fin. Int. B M"],
+                              "Dec. 2345/2008 - Fin. Int. Fonplata": ["Fin. Int. Fonplata"],
+                              "Dec. 2345/2008 - Fin. Int. P N U D": ["Fin. Int. P N U D"],
+                              "Dec. 2345/2008 - Fin. Int. U E": ["Fin. Int. U E"],
+                              "Dec. 1421/2002 (arts. 93/99 LCT)": [u"Ley Nº 20744"],
+                              }
              }
         ]
     },
@@ -79,7 +101,7 @@ def custom_cleaning_after_rules(dc):
 def clean_file(input_path, output_path):
     """Limpia los datos del input creando un nuevo archivo limpio."""
     print("Comenzando limpieza...")
-    dc = DataCleaner(input_path, encoding='utf-8')
+    dc = DataCleaner(input_path, encoding='latin1')
     custom_cleaning_before_rules(dc)
     dc.clean(RULES)
     custom_cleaning_after_rules(dc)
