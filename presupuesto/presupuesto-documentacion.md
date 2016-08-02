@@ -130,7 +130,7 @@ Extraida de[ http://sitiodelciudadano.mecon.gov.ar/sici/GlosarioPDF.pdf](http://
 
     * **Servicios de Defensa y Seguridad:** comprende las acciones inherentes a la defensa nacional, al mantenimiento del orden público interno y en las fronteras, costas y espacio aéreo y acciones relacionadas con el sistema penal.
 
-* **Servicios Económicos** comprende las acciones de apoyo a la producción de bienes y servicios significativos para el desarrollo económico. Incluye energía, combustibles, minería, comunicaciones, transporte, ecología y medio ambiente, agricultura, industria, comercio y turismo. Esta clasificación comprende acciones de fomento, regulación y control del sector privado y público.
+    * **Servicios Económicos** comprende las acciones de apoyo a la producción de bienes y servicios significativos para el desarrollo económico. Incluye energía, combustibles, minería, comunicaciones, transporte, ecología y medio ambiente, agricultura, industria, comercio y turismo. Esta clasificación comprende acciones de fomento, regulación y control del sector privado y público.
 
 * **Inciso:** Es el primer nivel de cuentas del clasificador por objeto del gasto. La clasificación por objeto del gasto se conceptúa como una ordenación sistemática y homogénea de los bienes y servicios, las transferencias y las variaciones de activos y pasivos que el sector público aplica en el desarrollo de sus actividades.
 
