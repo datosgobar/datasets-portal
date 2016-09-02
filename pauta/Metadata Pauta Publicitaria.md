@@ -1,8 +1,6 @@
 # Pauta oficial
 
-Se detallan montos (incluyendo IVA) destinados a las contrataciones correspondientes a campañas de bien público realizadas por la ADMINISTRACION PUBLICA NACIONAL, el Banco de la Nación Argentina y sus empresas vinculadas, y los demás organismos comprendidos en el artículo 8º de la Ley Nº 24.156, cualquiera fuera su fuente de financiamiento.
-
-La información publicada refleja las Órdenes de Publicidad Emitidas (Contrato de Locación de Servicio) otorgadas a aquellas Razones Sociales que corresponden a proveedores inscriptos en TELAM S.E. de acuerdo a cada campaña publicitaria aprobada.
+ La información publicada refleja las órdenes de publicidad emitidas en concepto de campañas de pauta oficial realizadas por la ADMINISTRACIÓN PUBLICA NACIONAL, el Banco de la Nación Argentina y sus empresas vinculadas, y demás organismos comprendidos en el artículo 8º de la Ley Nº 24.156, cualquiera fuera su fuente de financiamiento.
 
 
 ## Características
