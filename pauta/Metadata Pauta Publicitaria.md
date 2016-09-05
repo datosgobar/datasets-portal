@@ -11,7 +11,7 @@
 
 * **Tags o Etiquetas:**  pauta, publicidad, gastos, comunicación, medios
 
-* **Organización:** 
+* **Organización:** Jefatura de Gabinete de Ministros. Secretaría de Comunicación Pública.
 
 * **Autor:** Jefatura de Gabinete de Ministros. Secretaría de Comunicación Pública.
 
@@ -27,19 +27,19 @@
 
 ## Recursos
 
-### pauta-2014
+### Pauta Oficial Primer Semestre 2016
 
-* **Nombre: **pauta-oficial-2014 
+* **Nombre:** pauta-oficial-primer-semestre-2016
 
-* **Descripción:** Montos (incluye IVA) destinados a la publicidad oficial por parte del Poder Ejecutivo de la Nación durante el año 2014.
+* **Descripción:** Montos (incluye IVA) destinados a la publicidad oficial por parte del Poder Ejecutivo de la Nación durante el primer semestre de 2016.
 
 * **Formato:** CSV
 
-* **Rango temporal:** Desde Enero hasta Diciembre de 2014
+* **Rango temporal:** Desde Enero hasta Julio de 2016
 
 * **Fecha de Actualización:** 02/09/2016
 
-### pauta-2015
+### Pauta Oficial 2015
 
 * **Nombre:** pauta-oficial-2015 
 
@@ -51,15 +51,15 @@
 
 * **Fecha de Actualización:** 02/09/2016
 
-### pauta-2016
+### Pauta Oficial 2014
 
-* **Nombre:** pauta-oficial-primer-semestre-2016
+* **Nombre:**pauta-oficial-2014 
 
-* **Descripción:** Montos (incluye IVA) destinados a la publicidad oficial por parte del Poder Ejecutivo de la Nación durante el primer semestre de 2016.
+* **Descripción:** Montos (incluye IVA) destinados a la publicidad oficial por parte del Poder Ejecutivo de la Nación durante el año 2014.
 
 * **Formato:** CSV
 
-* **Rango temporal:** Desde Enero hasta Julio de 2016
+* **Rango temporal:** Desde Enero hasta Diciembre de 2014
 
 * **Fecha de Actualización:** 02/09/2016
 
