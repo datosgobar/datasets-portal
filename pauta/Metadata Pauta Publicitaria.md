@@ -75,7 +75,7 @@
 
 * **campania (string):** Nombre de la campaña con la que se corresponde el gasto.
 
-* **rubro (string):** Tipo de medio (Cable, Cine, Grafica, Radio, TV, Via Publica y Web) en el que se pacta la pauta.
+* **rubro (string):** Tipo de medio en el que se pacta la pauta. Entre ellos Cable, Cine, Grafica, Radio, TV, Via Publica y Web. A partir de 2016 se incluye redes sociales. 
 
 * **proveedor (string):** Razón social.
 
