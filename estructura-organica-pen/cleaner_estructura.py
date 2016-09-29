@@ -30,11 +30,6 @@ DEFAULT_OUTPUT_PATH = "estructura-organica-clean.csv"
 
 RULES = [
     {
-        "remover_columnas": [
-            {"field": "unnamed_0"}
-        ]
-    },
-    {
         "renombrar_columnas": [
             {"field": "aut_dni", "new_field": "autoridad_dni"},
             {"field": "aut_cuit_cuil", "new_field": "autoridad_cuil_cuit"},
@@ -59,7 +54,6 @@ RULES = [
             {"field": "autoridad_tratamiento", "keep_original": False},
             {"field": "autoridad_apellido", "keep_original": False},
             {"field": "autoridad_nombre", "keep_original": False},
-            {"field": "autoridad_cuil_cuit", "keep_original": False},
             {"field": "piso_oficina", "keep_original": False},
             {"field": "codigo_postal", "keep_original": False},
             {"field": "domicilio", "keep_original": False},
@@ -93,7 +87,8 @@ RULES = [
     {
         "reemplazar_string": [
             {"field": "piso_oficina", "replacements": {
-                "Oficina": ["Of.icina"]}}
+                "Oficina": ["Of.icina"]}},
+            {"field": "piso_oficina", "replacements": {"Piso": ["Planta"]}}
         ]
     }
 ]
@@ -180,6 +175,7 @@ def clean_file(input_path, output_path):
     # guarda la data limpia en el csv output
     dc.save(output_path)
     print("Limpieza finalizada exitosamente!")
+
 
 if __name__ == '__main__':
     # toma argumentos optativos de la línea de comandos
