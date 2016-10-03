@@ -93,11 +93,15 @@
 
 La decisión administrativa 448/2009 corresponde a las normas de procedimiento para la prestación de los servicios publicitarios creativos, arte y producción gráfica y audiovisual y para la tramitación y pago de las campañas institucionales de publicidad y comunicación del sector público nacional, efectivizadas por intermedio de TELAM sociedad del estado.
 
+La inversión publicitaria cursada a través de este procedimiento se abona con el Presupuesto asignado anualmente a la Secretaría de Comunicación Pública, Jefatura de Gabinete de Ministros. El mismo es financiado por el Tesoro Nacional para los ministerios que dependen de la Administración Central. En tanto, los Organismos Descentralizados como PAMI, ENARSA, NA.SA., INCAA, LOTERÍA NACIONAL, BANCO CENTRAL DE LA REPÚBLICA ARGENTINA cuentan con financiamiento de su propio presupuesto.
+
 * **DA 562-10**
 
 La decisión administrativa 562/2010 modifica a la da 448/09 corresponde a la aprobación de las "normas de procedimiento para la prestación de los servicios publicitarios creativos, arte y producción gráfica y audiovisual y para la tramitación y pago de las campañas institucionales de publicidad y comunicación del sector público nacional, efectivizadas por intermedio de TELAM S.E".
 
 En lo referido a las pautas de facturación debe reconocerse la situación de aquellos organismos y empresas del estado que revisten la calidad de responsables inscriptos frente al impuesto al valor agregado.
+
+En el caso de las Empresas y Sociedades del Estado incluidas en este procedimiento, la inversión es solventada con sus propios presupuestos aunque el pago se realiza a través de TELAM S.E. (BANCO DE LA NACIÓN ARGENTINA, AYSA, FABRICACIONES MILITARES, BICE, ADMINISTRACION GENERAL DE PUERTOS, INTERCARGO, Etc.)
 
 * **DTO 1145-09**
 
