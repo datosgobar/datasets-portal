@@ -16,7 +16,7 @@ En esta primera versión no se incluyen los cargos extra-escalafonarios. Toda la
 
 * **Autor:** Ministerio de Modernización- Secretaría  de Empleo Público- Subsecretaría de Planificación de Empleo Público.
 
-* **E-mail del Autor:** [mapadelestado@jefatura.gob.ar](mailto:mapadelestado@jefatura.gob.ar)
+* **E-mail del Autor:** [mapadelestado@modernizacion.gob.ar](mailto:mapadelestado@jefatura.gob.ar)
 
 * **Responsable:** Ministerio de Modernización.
 
@@ -86,9 +86,9 @@ En esta primera versión no se incluyen los cargos extra-escalafonarios. Toda la
 
 # Notas
 
-Para más información ver [http://mapadelestado.modernizacion.gob.ar/sitio/](http://mapadelestado.modernizacion.gob.ar/sitio/)
+Para más información ver [http://mapadelestado.modernizacion.gob.ar](http://mapadelestado.modernizacion.gob.ar)
 
 # Preprocesamiento
 
-Este dataset fue preprocesado siguiendo los [estándares de limpieza de datos](https://github.com/gobabiertoAR/documentacion-estandares/tree/master/datos/limpieza) que incluyen una normalización básica de strings, de fechas y separación de campos a partir de strings concatenados.
+Este dataset fue preprocesado siguiendo los [estándares de limpieza de datos](https://github.com/datosgobar/documentacion-estandares/tree/master/datos/limpieza) que incluyen una normalización básica de strings, de fechas y separación de campos a partir de strings concatenados.
 
