@@ -7,7 +7,7 @@
 
 * **Fecha de Publicación:** 02/09/2016
 
-* **Recursos:** pauta-2014, pauta-2015, pauta-2016
+* **Recursos:** pauta-2014, pauta-2015, pauta-primer-semestre-2016, pauta-segundo-semestre-2016
 
 * **Tags o Etiquetas:**  pauta, publicidad, gastos, comunicación, medios
 
@@ -26,6 +26,18 @@
 * **Frecuencia de Actualización:** Dos veces al año.
 
 ## Recursos
+
+### Pauta Oficial Primer Semestre 2016
+
+* **Nombre:** pauta-oficial-segundo-semestre-2016
+
+* **Descripción:** Montos destinados a la publicidad oficial por parte del Poder Ejecutivo de la Nación durante el segundo semestre de 2016.
+
+* **Formato:** CSV
+
+* **Rango temporal:** Desde julio hasta diciembre de 2016
+
+* **Fecha de Actualización:** 04/01/2016
 
 ### Pauta Oficial Primer Semestre 2016
 
@@ -69,7 +81,9 @@
 
 * **orden_de_publicidad (string):** Número de Orden de Publicidad
 
-* **total (float):** Monto total incluyendo IVA establecido en la orden de publicidad.** **(ARS - 1)
+* **total_neto (float):** Monto neto sin IVA establecido en la orden de publicidad.** **(ARS - 1)
+
+* **total_con_iva (float):** Monto total incluyendo IVA establecido en la orden de publicidad.** **(ARS - 1)
 
 * **descripcion_anunciante (string):** Nombre del organismo anunciante.
 
@@ -112,4 +126,3 @@ El Decreto 1145/2009 faculta a la SECRETARIA DE MEDIOS DE COMUNICACIÓN de la JE
 El Decreto 852/14 faculta a la JEFATURA DE GABINETE DE MINISTROS, para que a través de la SECRETARÍA DE COMUNICACIÓN PÚBLICA, celebre acuerdos con personas físicas o jurídicas titulares de diarios, revistas, periódicos y empresas editoriales en general, servicios de comunicación audiovisual y servicios conexos, productoras de contenidos audiovisuales y digitales, ediciones periodísticas digitales de información en línea y empresas de difusión en vía pública, a efectos de la cancelación de las deudas impositivas, aduaneras y previsionales que mantengan con la ADMINISTRACIÓN FEDERAL DE INGRESOS PÚBLICOS, entidad autárquica en el ámbito del MINISTERIO DE ECONOMÍA Y FINANZAS PÚBLICAS, devengadas con más sus intereses resarcitorios y/o punitorios, multas y demás accesorios, mediante un sistema de dación en pago de espacios publicitarios y/o servicios conexos en la programación de sus emisoras o en sus publicaciones, a cuyo efecto se instrumentará la emisión de bonos por el capital contratado y por el importe correspondiente al Impuesto al Valor Agregado que devengará la facturación de los montos objeto de dación".
 
 Se complementa con el Decreto 2379/2015 el cual PRORROGA hasta el 31 de diciembre 2015 el plazo previstos para formalizar ante AFIP la solicitud de adhesión al régimen establecido por el Decreto 852/2014 y Decreto 345/2016 EXTIENDE EL PLAZO para las prestaciones mencionadas hasta el 31 de marzo 2016.
-
