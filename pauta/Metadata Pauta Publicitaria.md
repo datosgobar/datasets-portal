@@ -27,7 +27,7 @@
 
 ## Recursos
 
-### Pauta Oficial Primer Semestre 2016
+### Pauta Oficial Segundo Semestre 2016
 
 * **Nombre:** pauta-oficial-segundo-semestre-2016
 
