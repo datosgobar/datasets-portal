@@ -1,8 +1,8 @@
-Solicitudes de Acceso a la Información Pública
+# Solicitudes de Acceso a la Información Pública
 
 En este cuerpo de datos se detallan los pedidos de acceso a la información que se realizan en el marco del Decreto 1172/2003. Entre otras cosas, se detallan la fecha del pedido, el estado del trámite y una síntesis del objeto de la solicitud. 
 
-# Características
+## Características
 
 * **Fecha de Publicación:** 26/02/2016
 
@@ -20,9 +20,9 @@ En este cuerpo de datos se detallan los pedidos de acceso a la información que 
 
 * **Frecuencia de Actualización:** Anual
 
-#Recursos
+## Recursos
 
-## Pedidos de acceso a la información 2016
+### Pedidos de acceso a la información 2016
 
 * **Nombre:** pedidos-de-acceso-a-la-informacion-2016
 
@@ -34,7 +34,7 @@ En este cuerpo de datos se detallan los pedidos de acceso a la información que 
 
 * **Fecha de Actualización: **06/04/2017
 
-### Campos del recurso
+#### Campos del recurso
 
 * **sips (int):** Nro. de pedido (antes: *pedidos*)
 
@@ -91,7 +91,7 @@ En este cuerpo de datos se detallan los pedidos de acceso a la información que 
 * **apellido_nombre_y_cargo_de_quien_firma_la_respuesta (string): **Apellido, nombre y cargo del funcionario que firma la entrega de la información.**
 **
 
-## Pedidos de acceso a la información 2015
+### Pedidos de acceso a la información 2015
 
 * **Nombre:** pedidos-de-acceso-a-la-informacion-2015
 
@@ -103,7 +103,7 @@ En este cuerpo de datos se detallan los pedidos de acceso a la información que 
 
 * **Fecha de Actualización: **31/12/2015
 
-### Campos del recurso
+#### Campos del recurso
 
 * **pedidos (int):** Nro. de pedido.
 
@@ -198,7 +198,7 @@ Siglas:
 
 * PAMI: PAMI.
 
-# Notas
+## Notas
 
 El acceso a la Información Pública esta regulado por el decreto 1172/2003:** **[http://infoleg.gov.ar/infolegInternet/anexos/90000-94999/90763/norma.htm](http://infoleg.gov.ar/infolegInternet/anexos/90000-94999/90763/norma.htm) 
 
