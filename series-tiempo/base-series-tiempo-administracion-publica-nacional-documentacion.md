@@ -1,10 +1,30 @@
-
 # Base de Series de Tiempo de la Administración Pública Nacional
 
 Base de series de tiempo de distintas fuentes primarias y secundarias de la Administración Pública Nacional, compilada por el Ministerio de Modernización. Estas series son normalizadas por organismos de la APN de acuerdo a los estandares propuestos por Modernización.
 
 ## Recursos del dataset
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Base de Series de Tiempo: valores y metadatos (CSV)](#base-de-series-de-tiempo-valores-y-metadatos-csv)
+- [Base de Series de Tiempo: metadatos enriquecidos de las series (CSV)](#base-de-series-de-tiempo-metadatos-enriquecidos-de-las-series-csv)
+- [Base de Series de Tiempo: valores (CSV)](#base-de-series-de-tiempo-valores-csv)
+- [Base de Series de Tiempo: fuentes (CSV)](#base-de-series-de-tiempo-fuentes-csv)
+- [Base de Series de Tiempo: valores y metadatos (XLSX)](#base-de-series-de-tiempo-valores-y-metadatos-xlsx)
+- [Base de Series de Tiempo: metadatos enriquecidos de las series (XLSX)](#base-de-series-de-tiempo-metadatos-enriquecidos-de-las-series-xlsx)
+- [Base de Series de Tiempo: valores (XLSX)](#base-de-series-de-tiempo-valores-xlsx)
+- [Base de Series de Tiempo: fuentes (XLSX)](#base-de-series-de-tiempo-fuentes-xlsx)
+- [Base de Series de Tiempo: valores y metadatos (DTA)](#base-de-series-de-tiempo-valores-y-metadatos-dta)
+- [Base de Series de Tiempo: metadatos enriquecidos de las series (DTA)](#base-de-series-de-tiempo-metadatos-enriquecidos-de-las-series-dta)
+- [Base de Series de Tiempo: valores (DTA)](#base-de-series-de-tiempo-valores-dta)
+- [Base de Series de Tiempo: fuentes (DTA)](#base-de-series-de-tiempo-fuentes-dta)
+- [Base de Series de Tiempo: valores y metadatos (DB)](#base-de-series-de-tiempo-valores-y-metadatos-db)
+- [Base de Series de Tiempo: metadatos enriquecidos de las series (DB)](#base-de-series-de-tiempo-metadatos-enriquecidos-de-las-series-db)
+- [Base de Series de Tiempo: valores (DB)](#base-de-series-de-tiempo-valores-db)
+- [Base de Series de Tiempo: fuentes (DB)](#base-de-series-de-tiempo-fuentes-db)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### Base de Series de Tiempo: valores y metadatos (CSV)
 
