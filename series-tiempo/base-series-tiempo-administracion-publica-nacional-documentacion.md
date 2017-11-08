@@ -4,6 +4,28 @@ Base de series de tiempo de distintas fuentes primarias y secundarias de la Admi
 
 ## Recursos del dataset
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+ 
+
+- [Valores y metadatos (CSV)](#valores-y-metadatos-csv)
+- [Metadatos enriquecidos de las series (CSV)](#metadatos-enriquecidos-de-las-series-csv)
+- [Valores (CSV)](#valores-csv)
+- [Fuentes (CSV)](#fuentes-csv)
+- [Valores y metadatos (XLSX)](#valores-y-metadatos-xlsx)
+- [Metadatos enriquecidos de las series (XLSX)](#metadatos-enriquecidos-de-las-series-xlsx)
+- [Valores (XLSX)](#valores-xlsx)
+- [Fuentes (XLSX)](#fuentes-xlsx)
+- [Valores y metadatos (DTA)](#valores-y-metadatos-dta)
+- [Metadatos enriquecidos de las series (DTA)](#metadatos-enriquecidos-de-las-series-dta)
+- [Valores (DTA)](#valores-dta)
+- [Fuentes (DTA)](#fuentes-dta)
+- [Valores y metadatos (DB)](#valores-y-metadatos-db)
+- [Metadatos enriquecidos de las series (DB)](#metadatos-enriquecidos-de-las-series-db)
+- [Valores (DB)](#valores-db)
+- [Fuentes (DB)](#fuentes-db)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ### Valores y metadatos (CSV)
 
